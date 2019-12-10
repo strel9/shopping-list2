@@ -20,8 +20,8 @@ section[0].appendChild(formNew);
 
 
 let liAll;
-btnAdd.onclick = function () {
-    // event.preventDefault();
+btnAdd.onclick = function (e) {
+    e.preventDefault();
     if (inputForm.value === '') {
         // console.log('пусто');
     } else {
@@ -56,12 +56,10 @@ btnAdd.onclick = function () {
         liAll = document.querySelectorAll("li");
         btnDel.onclick = function () {
             let del = btnDel.closest('li');
-            // btnDel = liAll[liAll.length - 1].remove(); //удаляю ли
             del.remove();
             // console.log(del);
+            // btnDel = liAll[liAll.length - 1].remove(); //удаляю ли
         };
-
-
     }
 
 };
@@ -94,8 +92,7 @@ for (let i = 0; i < liHov.length; i++) {
 let tooltip = document.createElement('div');
 tooltip.classList.add('ba-tooltip');
 tooltip.innerHTML = "Введите, что нужно купить";
-let tooltip2 = document.querySelector('.form_input');
-formNew.insertBefore(tooltip, tooltip2);//вставляю перед формой
+formNew.insertBefore(tooltip, inputForm);//вставляю тултип в форме перед инпутом 
 // tooltip.style.visibility = "hidden";
 tooltip.style.cssText = "visibility: hidden; background-color: #0053A5; color: #fff; border-radius: 4px; min-height: 50px; text-align: center; position: absolute";
 // tooltip.style.cssText = "position:absolute; color: red";
@@ -105,7 +102,6 @@ tooltip.style.cssText = "visibility: hidden; background-color: #0053A5; color: #
 // console.log(coords.left);
 // console.log(coords.top);
 // console.log(coords.top - 80);
-// console.log(coords.bottom);
 // console.log(inputForm.offsetHeight);
 
 // tooltip.style.left = coords.left + "px";

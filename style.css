@@ -135,7 +135,6 @@ input[type="checkbox"]:checked+span+span {
   border: 1px solid rgb(68, 64, 64);
   transition: 0.3s;
   display: flex;
-  display: flex;
   position: relative;
   /* justify-content: space-between; */
 }
